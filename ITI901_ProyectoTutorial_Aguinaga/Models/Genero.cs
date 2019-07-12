@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace ITI901_ProyectoTutorial_Aguinaga.Models
 {
-	public class Videojuego
+	public class Genero
 	{
 		public int Id { get; set; }
 
@@ -14,12 +13,6 @@ namespace ITI901_ProyectoTutorial_Aguinaga.Models
 
 		public string Descripcion { get; set; }
 
-		public string ImagenUrl { get; set; }
-
-		// Definición de la Relación
-		public int GeneroId { get; set; }
-
-		[ForeignKey("GeneroId")]
-		public virtual Genero Genero { get; set; }
+		public virtual IEnumerable<Videojuego> Videojuegos { get; set; }
 	}
 }
